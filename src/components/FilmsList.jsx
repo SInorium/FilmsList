@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const FilmsList = ({ films }) => {
   return (
     <>
-      <Table striped bordered hover>
+      <Table striped responsive borderless hover>
         <thead>
           <tr>
             <th>title</th>
@@ -13,24 +13,28 @@ const FilmsList = ({ films }) => {
             <th>rating</th>
             <th>runtime(min)</th>
             <th>genres</th>
-            <th>comments</th>
+            <th>link</th>
           </tr>
         </thead>
-        <tbody>
-          {films.map((film) => (
-            <tr key={film.id}>
-              <td>{film.title}</td>
-              <td>{film.year}</td>
-              <td>{film.rating}</td>
-              <td>{film.runtime}</td>
-              <td>{film.genres?.join(", ")}</td>
+        {films.length > 0 ? (
+          <tbody>
+            {films.map((film) => (
+              <tr key={film.id}>
+                <td>{film.title}</td>
+                <td>{film.year}</td>
+                <td>{film.rating}</td>
+                <td>{film.runtime}</td>
+                <td>{film.genres?.join(", ")}</td>
 
-              <td>
-                <Link to={`/${film.slug}`}>comments</Link>
-              </td>
-            </tr>
-          ))}
-        </tbody>
+                <td>
+                  <Link to={`/${film.slug}`}>link</Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        ) : (
+          <h3>no films</h3>
+        )}
       </Table>
     </>
   );

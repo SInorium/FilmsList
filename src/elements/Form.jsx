@@ -34,7 +34,7 @@ const Form = ({ create }) => {
       <Button
         onClick={addNewComment}
         size={"sm"}
-        theme={"light"}
+        variant={"outline-dark"}
         children={"create comment"}
       />
     </form>

@@ -6,7 +6,7 @@ const MyPagination = ({ limitPosts, page, changePage }) => {
   const pagesArr = usePagination(limitPosts);
 
   return (
-    <Pagination size="sm">
+    <Pagination size="sm" style={{ justifyContent: "center" }}>
       {pagesArr.map((v) => (
         <Pagination.Item
           active={v === page}

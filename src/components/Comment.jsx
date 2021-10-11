@@ -3,7 +3,7 @@ import { Card, Button } from "react-bootstrap";
 
 const Comment = ({ comment, removeComment, index }) => {
   return (
-    <Card>
+    <Card style={{ marginBottom: "1rem" }}>
       <Card.Header>
         {index + 1}. {comment.name}
       </Card.Header>
@@ -15,8 +15,12 @@ const Comment = ({ comment, removeComment, index }) => {
           </footer>
         </blockquote>
       </Card.Body>
-      <Button onClick={() => removeComment(comment)} size={"sm"} theme="dark">
-        удалить
+      <Button
+        onClick={() => removeComment(comment)}
+        size={"sm"}
+        variant={"dark"}
+      >
+        delete comment
       </Button>
     </Card>
   );

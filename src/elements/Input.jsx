@@ -6,7 +6,7 @@ const MyInput = (props) => {
     <FormControl
       {...props}
       size="sm"
-      className="mb-3 w-50"
+      className="mb-3"
       aria-label="Small"
       aria-describedby="inputGroup-sizing-sm"
     />

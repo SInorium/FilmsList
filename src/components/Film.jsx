@@ -4,7 +4,7 @@ import { useFetching } from "../hooks/useFetching";
 import FilmsService from "../api/FilmsService";
 import { Card, Accordion, Button } from "react-bootstrap";
 import Comment from "./Comment";
-import Modal from "../elements/Modal";
+import MyModal from "../elements/MyModal";
 import Form from "../elements/Form";
 
 const Film = ({ films }) => {
@@ -42,7 +42,7 @@ const Film = ({ films }) => {
       />
       <Card.Body>
         <Card.Title>{currentFilm?.title}</Card.Title>
-        <Accordion defaultActiveKey="0" flush>
+        <Accordion color={"dark"} defaultActiveKey="0" flush>
           <Accordion.Item eventKey="0">
             <Accordion.Header>summary</Accordion.Header>
             <Accordion.Body>
@@ -52,7 +52,7 @@ const Film = ({ films }) => {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
-            <Accordion.Header>comments</Accordion.Header>
+            <Accordion.Header>comments ({comments.length})</Accordion.Header>
             <Accordion.Body>
               {isLoading ? (
                 <h3>Загрузка комментариев...</h3>
@@ -70,7 +70,7 @@ const Film = ({ films }) => {
           </Accordion.Item>
         </Accordion>
       </Card.Body>
-      <Button variant="outline-dark" onClick={() => setShow(true)}>
+      <Button variant="secondary" onClick={() => setShow(true)}>
         Create new comment
       </Button>
 

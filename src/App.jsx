@@ -37,9 +37,13 @@ function App() {
       <Route
         path={"/"}
         render={() => (
-          <>
+          <div style={{ padding: "0.5rem" }}>
             {isLoading ? (
-              <Spinner animation="border" role="status">
+              <Spinner
+                style={{ position: "relative", left: "50%" }}
+                animation="border"
+                role="status"
+              >
                 <span className="visually-hidden">Loading...</span>
               </Spinner>
             ) : (
@@ -52,7 +56,7 @@ function App() {
                 />
               </>
             )}
-          </>
+          </div>
         )}
         exact
       />
